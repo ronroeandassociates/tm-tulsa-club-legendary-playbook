@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tulsa Club Legendary Playbook</title>
+  <meta name="description" content="Member-friendly access page for the Tulsa Club Legendary Playbook, meeting role scripts, officer resources, templates, and club systems." />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-alt: #eef4fb;
+      --text: #1f2937;
+      --muted: #667085;
+      --line: #dde3ec;
+      --accent: #0f4c81;
+      --accent-dark: #0b3558;
+      --accent-soft: #d9e9f8;
+      --success: #0f766e;
+      --shadow-sm: 0 6px 18px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 12px 28px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 10px 0 18px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .topbar a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 38px 30px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.05rem;
+      opacity: 0.96;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .button:hover { transform: translateY(-1px); }
+
+    .button-primary {
+      background: #ffffff;
+      color: var(--accent-dark);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .button-secondary {
+      background: rgba(255,255,255,0.14);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .section {
+      margin-top: 26px;
+    }
+
+    .section h2 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+      letter-spacing: -0.01em;
+    }
+
+    .section .intro {
+      margin: 0 0 16px;
+      color: var(--muted);
+      max-width: 850px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+
+    .card p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .card a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .roles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+
+    .role-link {
+      display: block;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 14px 13px;
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+      font-weight: 700;
+    }
+
+    .role-link span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 400;
+    }
+
+    .callout {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 16px;
+      background: var(--surface-alt);
+      border: 1px solid var(--accent-soft);
+    }
+
+    .callout strong { color: var(--accent-dark); }
+
+    .steps {
+      display: grid;
+      gap: 12px;
+    }
+
+    .step {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-num {
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .step h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .footer {
+      margin: 28px 0 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 16px; }
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 14px;
+      }
+      .hero {
+        padding: 28px 20px;
+        border-radius: 20px;
+      }
+      .button {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div><strong>Tulsa Toastmasters Club #148</strong> · Legendary Playbook</div>
+      <div><a href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook" target="_blank" rel="noopener noreferrer">Open Repository</a></div>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">Club Resource Hub</div>
+      <h1>Run stronger meetings. Prepare faster. Lead with confidence.</h1>
+      <p>
+        This page gives Tulsa Club members and officers a simple front door into the Legendary Playbook — including meeting role scripts, officer resources, event systems, and reusable club templates.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="#meeting-roles">Open Meeting Role Scripts</a>
+        <a class="button button-secondary" href="#officer-resources">Open Officer Resources</a>
+        <a class="button button-secondary" href="#how-to-use">How to Use This Page</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Start Here</h2>
+      <p class="intro">
+        Use the sections below based on what you need right now. Members will usually want role scripts or templates. Officers will usually want SOPs, systems, and event resources.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Playbook Core</h3>
+          <p>Club mission, structure, standards, and the operating philosophy behind the Legendary Playbook.</p>
+          <a href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/tree/main/01_Deliverables/Playbook_Core" target="_blank" rel="noopener noreferrer">Open Playbook Core</a>
+        </article>
+
+        <article class="card" id="officer-resources">
+          <h3>Officer Resources</h3>
+          <p>Role-based procedures and continuity documents for club officers and leadership transitions.</p>
+          <a href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/tree/main/01_Deliverables/Officer_SOPs" target="_blank" rel="noopener noreferrer">Open Officer SOPs</a>
+        </article>
+
+        <article class="card">
+          <h3>Event Systems</h3>
+          <p>Operational frameworks for open houses, speech contests, guest conversion, and special meeting formats.</p>
+          <a href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/tree/main/01_Deliverables/Event_SOPs" target="_blank" rel="noopener noreferrer">Open Event Systems</a>
+        </article>
+
+        <article class="card">
+          <h3>Templates & Tools</h3>
+          <p>Reusable templates for speech introductions, evaluations, agendas, and supporting club operations.</p>
+          <a href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/tree/main/01_Deliverables/Templates" target="_blank" rel="noopener noreferrer">Open Templates</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="meeting-roles">
+      <h2>Meeting Role Scripts</h2>
+      <p class="intro">
+        These links are for quick access before a meeting or during a meeting. The goal is simple: make it easy for a member to step into a role and deliver it confidently.
+      </p>
+      <div class="roles">
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/tree/main/01_Deliverables/Facilitator_Scripts" target="_blank" rel="noopener noreferrer">All Scripts<span>Open the full script folder</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=Presiding+Officer" target="_blank" rel="noopener noreferrer">Presiding Officer<span>Meeting opening and flow</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=Table+Topics+Master" target="_blank" rel="noopener noreferrer">Table Topics Master<span>Impromptu speaking segment</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=Speech+Evaluator" target="_blank" rel="noopener noreferrer">Speech Evaluator<span>Prepared speech evaluation</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=General+Evaluator" target="_blank" rel="noopener noreferrer">General Evaluator<span>Meeting-wide feedback role</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=Timer" target="_blank" rel="noopener noreferrer">Timer<span>Tracks speaking times</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=AhCounter" target="_blank" rel="noopener noreferrer">Ah-Counter<span>Tracks filler words</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=Grammarian" target="_blank" rel="noopener noreferrer">Grammarian<span>Language usage and word of the day</span></a>
+        <a class="role-link" href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook/search?q=Closing" target="_blank" rel="noopener noreferrer">Closing<span>Strong and orderly meeting close</span></a>
+      </div>
+      <div class="callout">
+        <strong>Best next improvement:</strong> replace these GitHub search links with direct PDF links or direct webpage copies of each script. That will be materially easier for members to use on mobile.
+      </div>
+    </section>
+
+    <section class="section" id="how-to-use">
+      <h2>How to Use This Page</h2>
+      <p class="intro">
+        Keep the workflow simple. The page should help a member find what they need in seconds, not force them to browse the repository structure.
+      </p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Need a meeting role?</h3>
+            <p>Go to Meeting Role Scripts and open the role you were assigned. Review it before the meeting or keep it open on your phone during the meeting.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Need officer guidance?</h3>
+            <p>Open Officer Resources to find role-based procedures and continuity documentation for leadership operations.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Need event or template material?</h3>
+            <p>Use Event Systems and Templates for open houses, club events, speech support, and reusable documents.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>GitHub Pages Deployment Notes</h2>
+      <p class="intro">
+        This file is structured as a single self-contained <code>index.html</code>, which makes it easy to publish with GitHub Pages as the first front-end layer for the playbook.
+      </p>
+      <div class="grid">
+        <article class="card">
+          <h3>Recommended File</h3>
+          <p>Save this page as <code>index.html</code> in the publish branch or site folder used for GitHub Pages.</p>
+        </article>
+        <article class="card">
+          <h3>Recommended Next Step</h3>
+          <p>Add clean PDF files or per-role HTML pages, then update the role links so members never have to search inside GitHub.</p>
+        </article>
+        <article class="card">
+          <h3>Best Long-Term Model</h3>
+          <p>Use GitHub as the source layer, GitHub Pages or FreeToastHost as the access layer, and published PDFs as the member-facing artifact layer.</p>
+        </article>
+      </div>
+    </section>
+
+    <div class="footer">
+      Tulsa Toastmasters Club #148 · Legendary Playbook Hub · <a href="https://github.com/ronroeandassociates/tm-tulsa-club-legendary-playbook" target="_blank" rel="noopener noreferrer">Repository</a>
+    </div>
+  </div>
+</body>
+</html>
