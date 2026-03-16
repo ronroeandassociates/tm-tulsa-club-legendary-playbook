@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timer | Tulsa Toastmasters Legendary Playbook</title>
+  <meta name="description" content="Tulsa Toastmasters Timer role guide with purpose, responsibilities, timing signals, sample script, and meeting-day checklist." />
+  <meta name="keywords" content="Toastmasters Timer, Timer script, Tulsa Toastmasters, meeting role script, speech timing, Timer guide" />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-soft: #eef4fb;
+      --text: #1f2937;
+      --muted: #667085;
+      --line: #dbe3ee;
+      --accent: #0f4c81;
+      --accent-dark: #0b3558;
+      --success: #12715b;
+      --warn: #b7791f;
+      --danger: #b42318;
+      --shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .topbar a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.04rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .button-primary {
+      background: #fff;
+      color: var(--accent-dark);
+    }
+
+    .button-secondary {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+
+    .intro {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .mini-card p,
+    .mini-card li {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .timing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .timing-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: var(--surface);
+    }
+
+    .timing-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .green { background: #dcfce7; color: var(--success); }
+    .yellow { background: #fef3c7; color: var(--warn); }
+    .red { background: #fee2e2; color: var(--danger); }
+
+    .script {
+      background: #0f172a;
+      color: #e5eef9;
+      border-radius: 18px;
+      padding: 22px;
+      overflow-x: auto;
+    }
+
+    .script p {
+      margin: 0 0 12px;
+    }
+
+    .script p:last-child { margin-bottom: 0; }
+
+    .checklist li::marker { color: var(--accent); }
+
+    .note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: #1e3a5f;
+    }
+
+    .footer {
+      margin: 26px 0 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 16px; }
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero { padding: 28px 20px; }
+      .button { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div><strong>Tulsa Toastmasters Club #148</strong> · Timer Role</div>
+      <div>
+        <a href="index.html">Back to Playbook</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">Meeting Role Script</div>
+      <h1>Timer</h1>
+      <p>
+        The Timer helps protect meeting quality by keeping speakers, evaluators, and segments within their allotted time. Good timing keeps the meeting orderly, fair, and professional.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="#script">Jump to Sample Script</a>
+        <a class="button button-secondary" href="#checklist">Meeting-Day Checklist</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Role Purpose</h2>
+        <p class="intro">
+          Your job is to track time accurately, signal speakers at the proper thresholds, and report timing results clearly when called upon. Precision matters. You are supporting both fairness and flow.
+        </p>
+        <div class="grid">
+          <div class="mini-card">
+            <h3>What You Do</h3>
+            <ul>
+              <li>Time prepared speeches, evaluations, and Table Topics responses.</li>
+              <li>Show the correct visual signal at the correct time.</li>
+              <li>Record final times accurately.</li>
+              <li>Deliver a concise timing report when asked.</li>
+            </ul>
+          </div>
+          <div class="mini-card">
+            <h3>What Good Looks Like</h3>
+            <ul>
+              <li>You are ready before the meeting begins.</li>
+              <li>Your timing signals are easy to see.</li>
+              <li>Your report is short, clear, and accurate.</li>
+              <li>You help the meeting stay on schedule.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Core Responsibilities</h2>
+        <ol>
+          <li>Arrive early enough to confirm that timing equipment or timing cards are available and visible.</li>
+          <li>Review the agenda so you know which segments need to be timed.</li>
+          <li>Confirm timing standards with the Presiding Officer, Toastmaster, or General Evaluator if anything is unclear.</li>
+          <li>Track each speaker and evaluator carefully.</li>
+          <li>Deliver your report only when called upon.</li>
+        </ol>
+        <div class="note">
+          Timing standards can vary slightly by speech project, contest, or special format. When in doubt, verify the target times before the meeting starts.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Common Timing Standards</h2>
+        <p class="intro">
+          These are common club-level examples. Use the actual agenda or instructions for the meeting if different times are assigned.
+        </p>
+        <div class="timing-grid">
+          <div class="timing-card">
+            <h3>Table Topics</h3>
+            <div class="pill green">Green · 1:00</div><br />
+            <div class="pill yellow">Yellow · 1:30</div><br />
+            <div class="pill red">Red · 2:00</div>
+          </div>
+          <div class="timing-card">
+            <h3>Speech Evaluation</h3>
+            <div class="pill green">Green · 2:00</div><br />
+            <div class="pill yellow">Yellow · 2:30</div><br />
+            <div class="pill red">Red · 3:00</div>
+          </div>
+          <div class="timing-card">
+            <h3>Prepared Speech Example</h3>
+            <div class="pill green">Green · 5:00</div><br />
+            <div class="pill yellow">Yellow · 6:00</div><br />
+            <div class="pill red">Red · 7:00</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="script">
+      <div class="card">
+        <h2>Sample Script</h2>
+        <p class="intro">
+          Adjust this to fit the meeting agenda and the instructions given by the Toastmaster or Presiding Officer.
+        </p>
+        <div class="script">
+          <p><strong>Introduction:</strong></p>
+          <p>“As Timer, I will monitor the time for prepared speeches, evaluations, and Table Topics. I will show the green signal, yellow signal, and red signal at the appropriate times for each segment. When called upon, I will report the time for each speaker.”</p>
+
+          <p><strong>Timing explanation example:</strong></p>
+          <p>“For Table Topics, I will show green at 1 minute, yellow at 1 minute 30 seconds, and red at 2 minutes. For evaluations, I will show green at 2 minutes, yellow at 2 minutes 30 seconds, and red at 3 minutes.”</p>
+
+          <p><strong>Timing report example:</strong></p>
+          <p>“Madeline’s Table Topic was 1 minute 42 seconds. Andrew’s Table Topic was 1 minute 57 seconds. Ron’s evaluation was 2 minutes 41 seconds. Wanda’s evaluation was 2 minutes 28 seconds.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="card">
+        <h2>Meeting-Day Checklist</h2>
+        <ul class="checklist">
+          <li>Bring or locate timing cards, lights, or approved timing device.</li>
+          <li>Review the agenda before the meeting starts.</li>
+          <li>Mark the time range for each speaker and evaluator.</li>
+          <li>Make sure your signals are visible from where speakers will stand.</li>
+          <li>Record each time immediately after the speaker finishes.</li>
+          <li>Keep your report brief and accurate.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Quick Tips</h2>
+        <div class="grid">
+          <div class="mini-card">
+            <h3>Be Visible</h3>
+            <p>Position yourself where speakers can see your timing signals without having to search for them.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Be Neutral</h3>
+            <p>Your role is accuracy, not commentary. Report the times plainly and without adding evaluation.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Be Ready</h3>
+            <p>Have a pen, agenda, and timing device ready before the meeting starts so there is no delay.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Tulsa Toastmasters Club #148 · Legendary Playbook · Timer
+    </div>
+  </div>
+</body>
+</html>

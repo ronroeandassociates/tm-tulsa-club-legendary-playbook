@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ah-Counter | Tulsa Toastmasters Legendary Playbook</title>
+  <meta name="description" content="Tulsa Toastmasters Ah-Counter role guide with purpose, responsibilities, sample script, tracking categories, and meeting-day checklist." />
+  <meta name="keywords" content="Toastmasters Ah-Counter, Ah Counter script, Tulsa Toastmasters, filler words, meeting role script, listening role" />
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --surface: #ffffff;
+      --surface-soft: #eef4fb;
+      --text: #1f2937;
+      --muted: #667085;
+      --line: #dbe3ee;
+      --accent: #0f4c81;
+      --accent-dark: #0b3558;
+      --warn: #b7791f;
+      --shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
+      --radius: 18px;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .topbar a {
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 34px 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.04rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .button-primary {
+      background: #fff;
+      color: var(--accent-dark);
+    }
+
+    .button-secondary {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.22);
+    }
+
+    .section {
+      margin-top: 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .section h2 {
+      margin: 0 0 12px;
+      font-size: 1.45rem;
+    }
+
+    .intro {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .mini-card {
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    .mini-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .mini-card p,
+    .mini-card li {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    ul, ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li + li { margin-top: 8px; }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .category-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+      background: var(--surface);
+    }
+
+    .category-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      background: #fef3c7;
+      color: var(--warn);
+    }
+
+    .script {
+      background: #0f172a;
+      color: #e5eef9;
+      border-radius: 18px;
+      padding: 22px;
+      overflow-x: auto;
+    }
+
+    .script p {
+      margin: 0 0 12px;
+    }
+
+    .script p:last-child { margin-bottom: 0; }
+
+    .checklist li::marker { color: var(--accent); }
+
+    .note {
+      margin-top: 14px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: #1e3a5f;
+    }
+
+    .footer {
+      margin: 26px 0 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 640px) {
+      .wrap { padding: 16px; }
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .hero { padding: 28px 20px; }
+      .button { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div><strong>Tulsa Toastmasters Club #148</strong> · Ah-Counter Role</div>
+      <div>
+        <a href="index.html">Back to Playbook</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="eyebrow">Meeting Role Script</div>
+      <h1>Ah-Counter</h1>
+      <p>
+        The Ah-Counter helps members become more aware of filler words, repeated phrases, and distracting speech habits. Done well, this role strengthens listening, supports speaker growth, and improves overall communication quality.
+      </p>
+      <div class="actions">
+        <a class="button button-primary" href="#script">Jump to Sample Script</a>
+        <a class="button button-secondary" href="#checklist">Meeting-Day Checklist</a>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Role Purpose</h2>
+        <p class="intro">
+          Your job is to listen carefully throughout the meeting and note verbal fillers or distracting habits that speakers may not realize they are using. The goal is not criticism. The goal is awareness and improvement.
+        </p>
+        <div class="grid">
+          <div class="mini-card">
+            <h3>What You Do</h3>
+            <ul>
+              <li>Listen for filler words such as “ah,” “um,” “so,” or “you know.”</li>
+              <li>Note repeated words or phrases when they become distracting.</li>
+              <li>Track accidental sounds or verbal crutches when appropriate.</li>
+              <li>Report your findings clearly and respectfully when called upon.</li>
+            </ul>
+          </div>
+          <div class="mini-card">
+            <h3>What Good Looks Like</h3>
+            <ul>
+              <li>You listen carefully to the whole meeting.</li>
+              <li>Your notes are accurate and organized.</li>
+              <li>Your report is concise and constructive.</li>
+              <li>You help members notice patterns they can improve.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Core Responsibilities</h2>
+        <ol>
+          <li>Arrive ready with a pen, agenda, and note sheet or device for tracking.</li>
+          <li>Listen throughout the meeting, not only during prepared speeches.</li>
+          <li>Track filler words and distracting habits in a fair and consistent way.</li>
+          <li>Keep your report brief, specific, and helpful.</li>
+          <li>Deliver your report only when called upon by the Toastmaster, General Evaluator, or Presiding Officer.</li>
+        </ol>
+        <div class="note">
+          Not every repeated word needs to be reported. Focus on patterns that are noticeable enough to affect clarity, flow, or polish.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>What to Listen For</h2>
+        <p class="intro">
+          Track the habits that most commonly weaken clarity or make a speaker sound less polished. Use judgment and stay constructive.
+        </p>
+        <div class="category-grid">
+          <div class="category-card">
+            <div class="tag">Filler Words</div>
+            <h3>Classic Fillers</h3>
+            <p>Examples include “ah,” “um,” “er,” and “uh.” These are the most common items to count.</p>
+          </div>
+          <div class="category-card">
+            <div class="tag">Repeated Phrases</div>
+            <h3>Verbal Crutches</h3>
+            <p>Examples include “you know,” “like,” “so,” “I mean,” or “basically” when used repeatedly.</p>
+          </div>
+          <div class="category-card">
+            <div class="tag">Distracting Sounds</div>
+            <h3>Unintended Noises</h3>
+            <p>Examples can include throat-clearing, repeated nervous laughter, or other sounds that break fluency.</p>
+          </div>
+          <div class="category-card">
+            <div class="tag">Pattern Awareness</div>
+            <h3>Repeated Words</h3>
+            <p>Notice when a speaker relies heavily on the same transition or phrase over and over in a short time span.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="script">
+      <div class="card">
+        <h2>Sample Script</h2>
+        <p class="intro">
+          Adjust this script to fit the meeting tone and the instructions given by the Toastmaster or General Evaluator.
+        </p>
+        <div class="script">
+          <p><strong>Introduction:</strong></p>
+          <p>“As Ah-Counter, I will listen for filler words, repeated words or phrases, and other distracting speech habits during the meeting. When called upon, I will provide a brief report to help speakers become more aware of these habits and continue improving.”</p>
+
+          <p><strong>Report example:</strong></p>
+          <p>“During today’s meeting, I noted several filler words and repeated phrases. Madeline used ‘um’ twice. Andrew used ‘you know’ three times. Ron used ‘so’ repeatedly during transitions. Overall, the meeting was strong, and these notes are simply to help us sharpen our communication.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="checklist">
+      <div class="card">
+        <h2>Meeting-Day Checklist</h2>
+        <ul class="checklist">
+          <li>Bring a pen, agenda, and note sheet or tracking device.</li>
+          <li>Mark each speaker’s name before the meeting starts if possible.</li>
+          <li>Listen during every major speaking segment.</li>
+          <li>Record patterns, not random isolated moments.</li>
+          <li>Keep your final report short, specific, and respectful.</li>
+          <li>Speak with a constructive tone when delivering your report.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Quick Tips</h2>
+        <div class="grid">
+          <div class="mini-card">
+            <h3>Be Constructive</h3>
+            <p>Your report should help people improve, not make them self-conscious or defensive.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Be Selective</h3>
+            <p>Focus on noticeable habits. Do not overload the report with minor items that do not materially matter.</p>
+          </div>
+          <div class="mini-card">
+            <h3>Be Consistent</h3>
+            <p>Use the same standard across speakers so your report feels fair and useful.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      Tulsa Toastmasters Club #148 · Legendary Playbook · Ah-Counter
+    </div>
+  </div>
+</body>
+</html>
