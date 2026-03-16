@@ -147,7 +147,7 @@ Tracking tool:
 
 * Distinguished Club Command Panel
 
-Goal: **achieve Distinguished, Select Distinguished, or President’s Distinguished status**.
+Goal: **achieve Select Distinguished, President’s Distinguished or Smedley Distinguished status**.
 
 ---
 
