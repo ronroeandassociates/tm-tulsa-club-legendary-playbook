@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toastmaster Script | Tulsa Club Legendary Playbook</title>
+  <meta name="description" content="Member-friendly Toastmaster role page with responsibilities, flow, preparation checklist, and speaking script for Tulsa Club meetings." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-alt: #eef4fb;
+      --text: #1f2937;
+      --muted: #667085;
+      --line: #d9e2ec;
+      --accent: #0f4c81;
+      --accent-dark: #0b3558;
+      --accent-soft: #d9e9f8;
+      --success: #0f766e;
+      --warn: #b45309;
+      --shadow-sm: 0 8px 24px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 18px 42px rgba(15, 23, 42, 0.10);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #f8fbff 0%, #f4f7fb 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(calc(100% - 32px), var(--max));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+    }
+
+    .hero-card {
+      background: linear-gradient(135deg, #0f4c81 0%, #123e67 100%);
+      color: #fff;
+      border-radius: 28px;
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+    }
+
+    .quick-nav {
+      padding: 18px 0 10px;
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .nav-list a {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    main {
+      padding: 16px 0 56px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      margin-bottom: 22px;
+    }
+
+    .card.alt {
+      background: var(--surface-alt);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 10px;
+    }
+
+    .checklist,
+    .plain-list,
+    .flow-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .checklist li,
+    .plain-list li,
+    .flow-list li {
+      margin-bottom: 10px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .role-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .role-table th,
+    .role-table td {
+      border: 1px solid var(--line);
+      padding: 12px 14px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .role-table th {
+      background: #f7faff;
+      width: 34%;
+    }
+
+    .script-block {
+      background: #0f172a;
+      color: #e5eefc;
+      border-radius: 16px;
+      padding: 20px;
+      white-space: pre-wrap;
+      font-family: "Courier New", Courier, monospace;
+      font-size: 0.96rem;
+      line-height: 1.7;
+      border: 1px solid rgba(255,255,255,0.08);
+      overflow-x: auto;
+    }
+
+    .note {
+      border-left: 4px solid var(--success);
+      padding: 12px 14px;
+      background: #f0fdf8;
+      border-radius: 0 12px 12px 0;
+      margin-top: 14px;
+    }
+
+    .warn {
+      border-left-color: var(--warn);
+      background: #fff7ed;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding: 10px 0 36px;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        padding: 28px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .wrap {
+        width: min(calc(100% - 20px), var(--max));
+      }
+
+      .card {
+        padding: 18px;
+      }
+
+      .hero {
+        padding-top: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="eyebrow">Tulsa Club Legendary Playbook</div>
+        <h1>Toastmaster</h1>
+        <p>
+          The Toastmaster is the meeting’s lead facilitator. This role creates flow, keeps energy high,
+          introduces participants clearly, and helps the meeting feel polished, warm, and well-paced.
+        </p>
+        <div class="pill-row">
+          <span class="pill">Lead Facilitator</span>
+          <span class="pill">Energy Steward</span>
+          <span class="pill">Meeting Flow Guide</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="quick-nav">
+    <div class="wrap">
+      <ul class="nav-list">
+        <li><a href="#purpose">Purpose</a></li>
+        <li><a href="#responsibilities">Responsibilities</a></li>
+        <li><a href="#prep">Preparation</a></li>
+        <li><a href="#flow">Meeting Flow</a></li>
+        <li><a href="#script">Facilitator Script</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap grid">
+      <section>
+        <article id="purpose" class="card">
+          <div class="section-label">Role Purpose</div>
+          <h2>What the Toastmaster does</h2>
+          <p>
+            The Toastmaster serves as the meeting’s master of ceremonies. The role is not merely procedural;
+            it is architectural. A strong Toastmaster connects the agenda, the people, the theme, and the energy
+            of the room into one coherent experience.
+          </p>
+          <ul class="plain-list">
+            <li>Creates a professional, member-friendly meeting experience.</li>
+            <li>Builds momentum from opening through evaluations.</li>
+            <li>Introduces each speaker and meeting participant with clarity and warmth.</li>
+            <li>Helps guests understand what is happening and why it matters.</li>
+            <li>Supports strong pacing in partnership with the Presiding Officer and Timer.</li>
+          </ul>
+          <div class="note">
+            <strong>Operating principle:</strong> the Toastmaster does not dominate the meeting. The Toastmaster connects, advances, and elevates it.
+          </div>
+        </article>
+
+        <article id="responsibilities" class="card alt">
+          <div class="section-label">Core Responsibilities</div>
+          <h2>What must be done well</h2>
+          <table class="role-table">
+            <tr>
+              <th>Before the meeting</th>
+              <td>
+                Review the agenda, confirm names and roles, collect speech titles and introductions,
+                and understand the meeting theme and word of the day.
+              </td>
+            </tr>
+            <tr>
+              <th>During the meeting</th>
+              <td>
+                Guide transitions, introduce speakers and evaluators, maintain tone, and keep the room oriented.
+              </td>
+            </tr>
+            <tr>
+              <th>For guests</th>
+              <td>
+                Make the experience understandable and welcoming by briefly framing each section of the meeting.
+              </td>
+            </tr>
+            <tr>
+              <th>For speakers</th>
+              <td>
+                Set them up well with crisp, accurate introductions and an encouraging handoff.
+              </td>
+            </tr>
+            <tr>
+              <th>For flow</th>
+              <td>
+                Keep remarks concise enough that the spotlight stays on participants, not the facilitator.
+              </td>
+            </tr>
+          </table>
+        </article>
+
+        <article id="prep" class="card">
+          <div class="section-label">Preparation Checklist</div>
+          <h2>Prepare before you stand up</h2>
+          <ol class="checklist">
+            <li>Read the full agenda and note every transition you will handle.</li>
+            <li>Confirm correct pronunciation of all participant names.</li>
+            <li>Obtain each speaker’s path, level, speech title, and brief introduction.</li>
+            <li>Coordinate with the General Evaluator if there are any unusual meeting elements.</li>
+            <li>Prepare a short opening tied to the meeting theme.</li>
+            <li>Prepare concise bridging lines between sections.</li>
+            <li>Know the order of speakers, evaluators, and supporting roles.</li>
+            <li>Be ready to adjust smoothly if a participant is absent or a role changes at the last minute.</li>
+          </ol>
+          <div class="note warn">
+            <strong>Failure point to avoid:</strong> overlong commentary between agenda items. The Toastmaster should keep momentum, not create drag.
+          </div>
+        </article>
+
+        <article id="flow" class="card alt">
+          <div class="section-label">Meeting Flow</div>
+          <h2>Suggested operating sequence</h2>
+          <ol class="flow-list">
+            <li>Take control after the Presiding Officer hands over the meeting.</li>
+            <li>Briefly frame the purpose of the Toastmaster role and connect to the theme.</li>
+            <li>Introduce the first prepared speaker.</li>
+            <li>After each speech, transition cleanly to the next speaker or to the evaluator sequence as the agenda requires.</li>
+            <li>Bridge into Table Topics if that section falls under your facilitation structure.</li>
+            <li>Bridge into evaluations and return control with professionalism.</li>
+            <li>Conclude your segment with a brief reinforcing remark and return the meeting to the Presiding Officer.</li>
+          </ol>
+        </article>
+
+        <article id="script" class="card">
+          <div class="section-label">Facilitator Script</div>
+          <h2>Toastmaster script template</h2>
+          <div class="script-block">Good evening, Toastmasters and guests.
+
+My role tonight as Toastmaster is to serve as your meeting guide and help move us smoothly through the program. Our theme tonight is [THEME], and our word of the day is [WORD].
+
+Toastmasters is where communication and leadership are built through structured practice, supportive feedback, and repetition over time. Tonight you will see that process in action.
+
+We now move into the prepared speech portion of the meeting.
+
+Our first speaker is [SPEAKER NAME]. [He/She/They] will present [SPEECH TITLE], a [PATH / LEVEL if desired] speech. [Insert 1–3 sentence introduction provided by the speaker.]
+
+Please help me welcome [SPEAKER NAME].
+
+[After speech]
+Thank you, [SPEAKER NAME], for that speech.
+
+[Optional bridge]
+Every speech gives us a chance to sharpen not only our speaking, but also our listening. That brings us to our next speaker.
+
+[Repeat concise introduction sequence for each prepared speaker.]
+
+[Transition to next section]
+Thank you to all of our prepared speakers. We now move to [TABLE TOPICS / EVALUATIONS / NEXT SECTION], where the meeting continues to build both spontaneity and skill.
+
+[If transitioning to evaluators]
+Evaluation is one of the great strengths of Toastmasters. It turns performance into progress. Please welcome [EVALUATOR / GENERAL EVALUATOR / NEXT ROLE].
+
+[At end of Toastmaster segment]
+Thank you, everyone, for your participation and attention. This meeting has reflected the discipline, courage, and growth that make Toastmasters valuable.
+
+Mr./Madam Presiding Officer, this concludes the Toastmaster portion of the meeting.</div>
+        </article>
+      </section>
+
+      <aside>
+        <article class="card">
+          <div class="section-label">Execution Standard</div>
+          <h2>How the role should feel</h2>
+          <ul class="plain-list">
+            <li>Confident, but not overbearing.</li>
+            <li>Warm, but still disciplined.</li>
+            <li>Energetic, but never rushed.</li>
+            <li>Polished, but still natural.</li>
+          </ul>
+        </article>
+
+        <article class="card alt">
+          <div class="section-label">Best Practices</div>
+          <h2>High-value habits</h2>
+          <ul class="plain-list">
+            <li>Use short transitions.</li>
+            <li>Keep introductions accurate and crisp.</li>
+            <li>Smile and make eye contact before introducing speakers.</li>
+            <li>Reset the room after awkward pauses or unexpected changes.</li>
+            <li>Support the meeting’s tone without becoming the center of attention.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="section-label">Avoid</div>
+          <h2>Common errors</h2>
+          <ul class="plain-list">
+            <li>Talking too long between segments.</li>
+            <li>Mispronouncing names or speech titles.</li>
+            <li>Failing to verify introductions in advance.</li>
+            <li>Creating confusion about what comes next.</li>
+            <li>Letting momentum fall after each speech.</li>
+          </ul>
+        </article>
+
+        <article class="card alt">
+          <div class="section-label">Quick Cue Card</div>
+          <h2>Minimal live reminder</h2>
+          <ul class="plain-list">
+            <li>Theme</li>
+            <li>Word of the day</li>
+            <li>Speaker order</li>
+            <li>Speech titles</li>
+            <li>Introductions</li>
+            <li>Evaluator handoffs</li>
+            <li>Closing return to Presiding Officer</li>
+          </ul>
+        </article>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer wrap">
+    Tulsa Club Legendary Playbook · Toastmaster Role Page
+  </footer>
+</body>
+</html>
